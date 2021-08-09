@@ -20,7 +20,7 @@
 
 <script setup>
 import { defineProps, reactive } from 'vue';
-
+console.log('环境变量: ', import.meta.env);
 defineProps({
   msg: String,
 });

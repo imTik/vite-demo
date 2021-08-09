@@ -1,7 +1,29 @@
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
+import { defineConfig } from 'vite';
+import vue from '@vitejs/plugin-vue';
+import legacy from '@vitejs/plugin-legacy'; // 为传统浏览器提供支持
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue()]
-})
+  base: 'vite-demo',
+  envDir: '/env',
+  server: {
+    proxy: {
+      '/api': {
+        target: '',
+        changeOrigin: 'http://192.168.35.171:8888',
+        rewrite: (path) => path.rewrite(/^\/api/, ''),
+      },
+    },
+  },
+  build: {
+    assetsInlineLimit: 4096, // 小于此阈值的导入或引用资源将内联为 base64 编码
+    cssCodeSplit: true, // 如果禁用，整个项目中的所有 CSS 将被提取到一个 CSS 文件中。
+    sourcemap: false,
+  },
+  plugins: [
+    vue(),
+    legacy({
+      targets: ['defaults', 'not IE 11'],
+    }),
+  ],
+});
