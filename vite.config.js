@@ -5,13 +5,13 @@ import legacy from '@vitejs/plugin-legacy'; // 为传统浏览器提供支持
 // https://vitejs.dev/config/
 export default defineConfig({
   base: 'vite-demo',
-  envDir: '/env',
+  envDir: './env',
   server: {
     proxy: {
       '/api': {
-        target: '',
-        changeOrigin: 'http://192.168.35.171:8888',
-        rewrite: (path) => path.rewrite(/^\/api/, ''),
+        target: 'http://192.168.35.170:8888',
+        changeOrigin: '',
+        rewrite: (path) => path.replace(/^\/api/, ''),
       },
     },
   },

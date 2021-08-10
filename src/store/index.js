@@ -17,8 +17,8 @@ let store = {
     },
   },
   getters: {
-    COUNT: state => state.count
-  }
+    COUNT: (state) => state.count,
+  },
 };
 
 export default createStore(store);
