@@ -7,6 +7,7 @@ export default defineConfig({
   base: 'vite-demo',
   envDir: './env',
   server: {
+    port: '3001',
     proxy: {
       '/api': {
         target: 'http://192.168.35.171:8888',
