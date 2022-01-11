@@ -23,8 +23,8 @@ import { useStore } from 'vuex';
 
 // api
 import { test } from '../api/index';
-import FastTime from '../FastTime';
-import { hasSpecialSymbol, isNumber, hasSpace, isEmail, isPhone, isIdCard, hasChinese, isMoney } from '../Regular';
+import FastTime from '../utils/FastTime';
+import { hasSpecialSymbol, isNumber, hasSpace, isEmail, isPhone, isIdCard, hasChinese, isMoney } from '../utils/Regular';
 
 let regVal = ref('');
 
