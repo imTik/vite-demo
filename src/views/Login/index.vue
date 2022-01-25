@@ -5,15 +5,8 @@
   </div>
 </template>
 
-<script>
-import { defineComponent } from 'vue';
+<script setup>
 import { NButton } from 'naive-ui';
-
-export default defineComponent({
-  components: {
-    NButton
-  }
-})
 
 </script>
 
