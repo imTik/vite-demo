@@ -3,21 +3,21 @@ import { createRouter, createWebHistory } from 'vue-router';
 const routes = [
   {
     path: '/',
-    redirect: '/vite-demo/',
+    redirect: '/login/',
   },
   {
-    path: '/vite-demo/',
-    name: 'index',
+    path: '/login',
+    name: 'loginIndex',
     meta: {
-      title: 'vite-app-home',
+      title: '登录页',
     },
-    component: () => import('../views/index.vue'),
+    component: () => import('../views/Login/index.vue'),
   },
 ];
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory(), // createWebHashHistory()
   routes,
-})
+});
 
 export default router;
